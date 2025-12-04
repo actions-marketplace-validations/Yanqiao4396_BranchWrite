@@ -12,17 +12,48 @@ see [action.yml](action.yml)
 
 ### Example
 
+#### content
 ```yaml
 - name: 
-uses: actions # TODO: update to the release
+uses: GatorEducator/BranchWrite@v1
+if:
+    always()
 with:
     repo-token: ${{ secrets.GITHUB_TOKEN }}
     branch: insight
-    destination-path: cool/insight.json
+    path: cool/insight.json
     source: content
-    content: hello from action
+    source-arg: hello from action
+```
+#### env
+
+```yaml
+- name: 
+uses: GatorEducator/BranchWrite@v1
+if:
+    always()
+with:
+    repo-token: ${{ secrets.GITHUB_TOKEN }}
+    branch: insight
+    path: cool/insight.json
+    source: env
+    source-arg: JSON_REPORT
 ```
 
+#### branch + file
+
+```yaml
+- name: 
+uses: GatorEducator/BranchWrite@v1
+if:
+    always()
+with:
+    repo-token: ${{ secrets.GITHUB_TOKEN }}
+    branch: insight
+    path: cool/insight.json
+    source: branch-and-path
+    source-arg: main-branch/foo/bar.txt
+```
 ## License
 
 The scripts and documentation in this project are released under the [MIT License](LICENSE)
