@@ -9,7 +9,7 @@ OWNER = os.environ["GITHUB_REPOSITORY_OWNER"]
 
 
 
-AUTHENTICATED_API = github.Github(TOKEN)
+AUTHENTICATED_API = github.Github(auth=github.Auth.Token(TOKEN))
 
 
 class BranchWrite:
